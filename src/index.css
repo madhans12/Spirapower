@@ -38,13 +38,32 @@ li {
   margin: 0;
 }
 
+nav {
+  height: 71px;
+  width: 100vw;
+}
+
+main {
+  position: absolute;
+  top: 71px;
+  translate: 316px;
+  width: calc(100vw - 316px);
+  height: calc(100vh - 71px);
+  background-color: #f2f3f7;
+}
+
+footer {
+  height: 54px;
+  width: 100vw;
+  background-color: #000;
+}
+
 aside {
   width: 316px;
   background-color: #fff;
-  height: calc(100vh - 125px);
+  height: calc(100vh - 71px);
   overflow: auto;
   overflow-x: hidden;
-
 }
 
 p {

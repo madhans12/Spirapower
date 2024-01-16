@@ -44,11 +44,12 @@ const Enquires = () => {
 
     const handleClose = () => setOpen(false);
     return (<main>
-        <div className=''>
+
             <div className="container1">
                 <p className="title">All Enquires</p>
-
-                <PaginatedItems itemsPerPage={10} handleOpen={handleOpen} open={open} users={users} />
+{/* <div className="page"> */}
+                <PaginatedItems itemsPerPage={8} handleOpen={handleOpen} open={open} users={users} />
+                {/* </div> */}
                 {(open && selectedUser &&
                     <EditPopup
                         open={open}
@@ -61,7 +62,7 @@ const Enquires = () => {
 
             </div>
 
-        </div></main>
+        </main>
     )
 }
 
