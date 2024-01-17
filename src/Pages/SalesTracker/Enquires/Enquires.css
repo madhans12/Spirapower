@@ -3,9 +3,9 @@
     text-align: center;
 }
 
-.ant-btn {
+/* .ant-btn {
     display: none;
-}
+} */
 
 .anticon svg {
     width: 24px !important;
@@ -43,6 +43,8 @@
     background: #fff;
     width: 100%;
     overflow-x: auto;
+    height: 80%;
+
 }
 
 .ant-modal-title {
@@ -229,8 +231,28 @@ td {
     gap: 20px;
 }
 
+.popup-left div input {
+    padding: 5px 12px;
+    height: 32px;
+    width: 380px;
+    border-radius: 4px;
+    border: 1px solid #cbcbcb;
+    color: #747474;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+}
+
 .popup-right {
     margin-left: 21px;
+}
+
+.empty {
+    color: #C3C3C3;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
 }
 
 .popup-left div {
@@ -255,8 +277,9 @@ td {
     align-items: center;
     gap: 11px;
     flex-wrap: wrap;
-    padding-right: 11px;
+    /* padding-right: 11px; */
     padding-bottom: 8px;
+    width: 380px;
 }
 
 .actions div {
@@ -321,7 +344,7 @@ td {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 81px;
+    height: 64px;
     background-color: #fff;
     border-radius: 0 0 6px 6px;
     gap: 10px;

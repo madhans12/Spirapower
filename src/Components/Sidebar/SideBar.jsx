@@ -20,9 +20,12 @@ const useLocalStorage = (key, initialValue) => {
   return [value, setValue];
 };
 const SideBar = () => {
-  const [dropdownState, setDropdownState] = useLocalStorage("dropdownState", new Map());
-  const navigate = useNavigate()
-  const location = useLocation()
+  const [dropdownState, setDropdownState] = useLocalStorage(
+    "dropdownState",
+    new Map()
+  );
+  const navigate = useNavigate();
+  const location = useLocation();
   const handleDropDown = (index) => {
     const newDropdownState = new Map(dropdownState);
     newDropdownState.set(index, !newDropdownState.get(index));
@@ -37,12 +40,22 @@ const SideBar = () => {
     navigate(link);
     event.stopPropagation();
   };
-  const isActiveDropdown = (index) => dropdownState.get(index) && sidebarData[index].dropdown;
+  const isActiveDropdown = (index) =>
+    dropdownState.get(index) && sidebarData[index].dropdown;
 
   const sidebarData = [
     {
       text: "Home",
       link: "/",
+      imgSrc: Home,
+      alt: "side-img",
+      dropdown: false,
+      permission: true,
+      arrowImage: false,
+    },
+    {
+      text: "Users",
+      link: "User",
       imgSrc: Home,
       alt: "side-img",
       dropdown: false,
@@ -64,7 +77,7 @@ const SideBar = () => {
         { title: "Awaiting Order", link: "/awaiting-order" },
         { title: "Again Inquiries", link: "/again-enquiries" },
         { title: "Report", link: "/report" },
-      ]
+      ],
     },
     {
       text: "Quality",
@@ -74,7 +87,8 @@ const SideBar = () => {
       permission: true,
       dropdown: false,
       arrowImage: true,
-    }, {
+    },
+    {
       text: "Procurement",
       link: "Procurement",
       imgSrc: Procurement,
@@ -91,7 +105,7 @@ const SideBar = () => {
       permission: true,
       dropdown: false,
       arrowImage: true,
-    }
+    },
   ];
 
   const sidebarElements = sidebarData.map((item, index) => (
@@ -107,41 +121,58 @@ const SideBar = () => {
           <img
             src={item.imgSrc}
             alt={item.alt}
-            className={`${dropdownState[index] && item.dropdown ? "Border-Color" : ""}`}
+            className={`${
+              dropdownState[index] && item.dropdown ? "Border-Color" : ""
+            }`}
           />
-          <p className={`${dropdownState[index] && item.dropdown ? "Border-Color" : ""}`}>
+          <p
+            className={`${
+              dropdownState[index] && item.dropdown ? "Border-Color" : ""
+            }`}
+          >
             {item.text}
           </p>
         </div>
         {item.arrowImage && (
           <div
-            className={`homesidebar-rightarrow ${isActiveDropdown(index) ? "arrow-down" : ""
-              }`}
+            className={`homesidebar-rightarrow ${
+              isActiveDropdown(index) ? "arrow-down" : ""
+            }`}
           >
             <img src={arrowIcon} alt="icon" />
           </div>
         )}
       </div>
-      {isActiveDropdown(index) &&
+      {isActiveDropdown(index) && (
         <div className="dropdown-line">
           <hr />
-          <div
-            className={` dropdown-link df`}>
+          <div className={` dropdown-link df`}>
             <ul className="df">
               {item.dropDownData.map((dropItem, dropIndex) => (
-                <div className={`sidebar-dropdown ${location.pathname === dropItem.link ? "active" : ""}`} key={dropIndex}>
+                <div
+                  className={`sidebar-dropdown ${
+                    location.pathname === dropItem.link ? "active" : ""
+                  }`}
+                  key={dropIndex}
+                >
                   <li
-                    onClick={(event) => handleLinkClick(event, dropItem.link)} className={`df ${location.pathname === dropItem.link ? "link-col" : "link-col1"} dropdown-links`}>{dropItem.title}
+                    onClick={(event) => handleLinkClick(event, dropItem.link)}
+                    className={`df ${
+                      location.pathname === dropItem.link
+                        ? "link-col"
+                        : "link-col1"
+                    } dropdown-links`}
+                  >
+                    {dropItem.title}
                   </li>
                 </div>
               ))}
             </ul>
           </div>
         </div>
-      }
+      )}
     </li>
   ));
-
 
   return (
     <aside>
@@ -149,10 +180,5 @@ const SideBar = () => {
     </aside>
   );
 };
-
-
-
-
-
 
 export default SideBar;

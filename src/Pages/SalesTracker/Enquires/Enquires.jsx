@@ -19,13 +19,25 @@ const Enquires = () => {
         try {
             await _AuthHttp.post(`/api/delete`, { refrence_num: reference_number });
     
-            setUsers(prevUsers => prevUsers.filter((_, i) => i !== index));
+            setUsers(prevUsers => prevUsers.filter((userdata) => userdata.refrence_num !== reference_number));
         } catch (error) {
             console.log(error);
         }
         handleClose()
     };
-    
+    const handleUpdate = async (ref_num, updatedData) => {
+        try {
+            await _AuthHttp.put(`/api/update/${ref_num}`, updatedData);
+            setUsers((prevUsers) =>
+                prevUsers.map((user) =>
+                    user.refrence_num === ref_num ? { ...user, ...updatedData } : user
+                )
+            );
+            handleClose();
+        } catch (error) {
+            console.log(error);
+        }
+    };
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -57,10 +69,12 @@ const Enquires = () => {
                 <button>+ Add customer</button>
                 </div>
                 <PaginatedItems
-                    itemsPerPage={2}
+                    itemsPerPage={3}
                     handleOpen={handleOpen}
                     open={open}
                     users={users}
+
+
                 />
 
                 {open && selectedUser && (
@@ -69,6 +83,7 @@ const Enquires = () => {
                         user={selectedUser}
                         handleClose={handleClose}
                         handleDelete={handleDelete}
+                        handleUpdate={handleUpdate}
                     />
                 )}
             </div>
