@@ -1,5 +1,5 @@
 import ReactPaginate from 'react-paginate';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import UserDataTable from './UserDataTable';
 function PaginatedItems({ itemsPerPage, handleOpen, open, users }) {
 
@@ -21,7 +21,7 @@ function PaginatedItems({ itemsPerPage, handleOpen, open, users }) {
 
     return (
         <>
-            <UserDataTable handleOpen={handleOpen} currentItems={currentItems} open={open} />
+            <UserDataTable handleOpen={handleOpen} currentItems={currentItems} open={open}/>
             <ReactPaginate
                 breakLabel="..."
                 nextLabel=">"

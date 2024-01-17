@@ -8,31 +8,20 @@ import Pricetag from "./../../../Assets/PopIcon/Price tag.svg"
 import Recruitment from "./../../../Assets/PopIcon/Recruitment.svg"
 
 
-const EditPopup = ({ user, handleClose, open }) => {
-
-        // const [open, setOpen] = useState(false);
+const EditPopup = ({ user, handleClose, open ,handleDelete}) => {
     
         return (
             <>
-                <Button type="primary" onClick={handleClose}>
-                    {/* Open Modal of 1000px width */}
-                </Button>
                 <Modal
-                    title="Modal 1000px width"
+                    title={user.client_person_name}
                     centered
                     open={open}
                     // onOk={() => setOpen(true)}
                     onCancel={handleClose}
                     width={1000}
                 >
-                    <div className="popup">
-                            <div className="popup-inner">
-                                <div className="popup-top">
-                                    <h2>{user.title}</h2>
-                                    <div onClick={handleClose} className="popup-close">
-                                        <img src={CloseIcon} alt="icon" />
-                                    </div>
-                                </div>
+
+
                                 <div className="pop" style={{ display: "flex" }}>
                                     <div className="popup-left">
                                         <div className="actions">
@@ -90,13 +79,13 @@ const EditPopup = ({ user, handleClose, open }) => {
                                             <p>Activities</p>
                                             <input type="text" className="activity-input" placeholder="write your Comments" />
                                         </div>
+                                        <div>
+                                        <button onClick={()=>handleDelete(user.reference_number)}>Delete</button>
                                     </div>
+                                    </div>
+                                   
                                 </div>
-    
-    
-                            </div>
-    
-                        </div>
+
                 </Modal>
             </>
         );

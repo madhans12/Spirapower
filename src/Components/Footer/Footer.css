@@ -17,3 +17,9 @@
 .footer1 {
     gap: 20px;
 }
+
+footer {
+    height: 54px;
+    width: 100vw;
+    background-color: #000;
+}

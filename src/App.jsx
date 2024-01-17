@@ -1,28 +1,30 @@
-import React from 'react'
-import Navbar from './Components/Navbar/Navbar'
-import SideBar from './Components/Sidebar/SideBar'
-import Footer from './Components/Footer/Footer'
-import { Route, Routes } from 'react-router-dom'
-import Home from './Pages/Home/Home'
-import "./App.css"
-import Enquires from './Pages/SalesTracker/Enquires/Enquires'
+import React from 'react';
+import Navbar from './Components/Navbar/Navbar';
+import Sidebar from './Components/Sidebar/Sidebar';
+import Footer from './Components/Footer/Footer';
+import { Route, Routes } from 'react-router-dom';
+import Home from './Pages/Home/Home';
+import Enquires from './Pages/SalesTracker/Enquires/Enquires';
+import './App.css';
+
 const App = () => {
   return (
     <div>
-
-      <Navbar />
-      <SideBar />
+      <div className="app-container">
+        <Navbar />
+        <div className="main-container">
+          <Sidebar />
+          <div className="content">
+            <Routes>
+              <Route path="/home" element={<Home />} />
+              <Route path="/enquires" element={<Enquires />} />
+            </Routes>
+          </div>
+        </div>
+      </div>
       <Footer />
-      <Routes>
-        <Route path='/' element={<Home />}></Route>
-
-        <Route path='/Home' element={<Home />}></Route>
-        <Route path="/enquires" element={<Enquires />}></Route>
-
-      </Routes>
-
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

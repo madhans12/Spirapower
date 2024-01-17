@@ -1,136 +1,126 @@
 .home-sidebar {
-    width: 316px;
-    background-color: #fff;
-    padding: 27px 16px 0px 16px;
-    overflow: auto;
-    overflow-x: hidden;
-    width: inherit;
+  height: calc(100vh - 71px);
+  width: 300px;
+  padding: 10px;
+  padding-top: 27px;
+  background-color: #fff;
+  overflow: auto;
 }
 
-.home-sidebar>li {
-    width: 284px;
-    /* height: 50px; */
-    border-radius: 7px;
-    background: #FFF;
-    /* box-shadow: 0px 4px 12px 3px rgba(0, 0, 0, 0.03); */
+.home-sidebar > li {
+  width: 100%;
+  border-radius: 7px;
+  background: #fff;
 }
 
-.sidebar-link-right>img {
-    padding: 12px 17px 18px 12px;
+.sidebar-link-right > img {
+  padding: 12px 17px 18px 12px;
 }
 
 .sidebar-link-right p {
-    cursor: default;
-    color: #1C2132;
-    font-family: Inter;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
+  cursor: default;
+  color: #1c2132;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 }
 
 .sidebar-link {
-    justify-content: space-between;
+  justify-content: space-between;
 }
 
-.arrow-down>img {
-    rotate: 180deg;
-    padding-right: 0px;
-    color: #1e6641;
-    padding-left: 27px;
+.arrow-down > img {
+  rotate: 180deg;
+  padding-right: 0px;
+  color: #1e6641;
+  padding-left: 27px;
 }
 
-.homesidebar-rightarrow>img {
-    padding-right: 27px;
-    color: #37404A;
-
+.homesidebar-rightarrow > img {
+  padding-right: 27px;
+  color: #37404a;
 }
 
 .Color1 {
-    border: 1px solid #1e6641;
-    border-radius: 7px;
-
+  border: 1px solid #1e6641;
+  border-radius: 7px;
 }
 
 .Color {
-    border: 1px solid #D7DADE;
-    border-radius: 7px;
-
-
+  border: 1px solid #d7dade;
+  border-radius: 7px;
 }
 
 .Border-Color {
-    color: #1e6641;
+  color: #1e6641;
 }
 
 .d-height {
-    height: max-content;
-    margin: 0;
+  height: max-content;
+  margin: 0;
 }
 
 .d-height1 {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .sidebar-dropdown {
-    border-radius: 7px;
-}
-
-.sidebar-dropdown li {
-    width: 255px;
-    height: 39px;
-    flex-shrink: 0;
-    border: 1px solid #D7DADE;
-    /* background: #FFF; */
-    box-shadow: 0px 4px 12px 3px rgba(0, 0, 0, 0.03);
-    border-radius: 7px;
+  border-radius: 7px;
 }
 
 .dropdown-link ul {
-    flex-direction: column;
-    gap: 10px;
-    padding-top: 20px;
-    padding-bottom: 13px;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 20px;
+  padding-bottom: 13px;
+}
 
+.sidebar-dropdown li {
+  width: 240px;
+  height: 39px;
+  flex-shrink: 0;
+  border: 1px solid #d7dade;
+  box-shadow: 0px 4px 12px 3px rgba(0, 0, 0, 0.03);
+  border-radius: 7px;
 }
 
 .dropdown-links {
-    font-family: Inter;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    padding: 10px 0px 10px 33px;
-    width: 100%;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  padding: 10px 0px 10px 33px;
+  width: 100%;
 }
 
-
 .dropdown-line {
-    display: flex;
-    /* flex-direction: column; */
-    align-items: center;
-    gap: 15px;
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  gap: 15px;
 }
 
 .dropdown-line hr {
-    height: 336px;
-    translate: 7px;
-    margin: 0;
-    border: 1px solid;
-    opacity: 1;
-    color: #e9e6e6;
+  height: 336px;
+  translate: 7px;
+  margin: 0;
+  border: 1px solid;
+  opacity: 1;
+  color: #e9e6e6;
 }
 
 /* Add this to your CSS */
 .active {
-    background-color: #1e6641;
+  background-color: #1e6641;
 }
 
 .link-col {
-    color: #fff;
+  color: #fff;
 }
 
 .link-col1 {
-    color: #37404A;
-
+  color: #37404a;
 }

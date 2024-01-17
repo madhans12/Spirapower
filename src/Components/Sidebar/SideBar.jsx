@@ -42,7 +42,7 @@ const SideBar = () => {
   const sidebarData = [
     {
       text: "Home",
-      link: "Home",
+      link: "/",
       imgSrc: Home,
       alt: "side-img",
       dropdown: false,
