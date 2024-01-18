@@ -132,12 +132,6 @@ const EditPopup = ({ user, handleClose, open, handleDelete, handleUpdate }) => {
               <p>Original Email Receive Time</p>
               <input value={userData.sales_email_time.slice(5, -6)} />
             </div> */}
-            <div>
-              <p>Histroy</p>
-              <div className="histroy">
-                <p>Lead Backlog</p>
-              </div>
-            </div>
           </div>
           <hr />
           <div className="popup-right">

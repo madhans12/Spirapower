@@ -127,7 +127,7 @@ const SideBar = () => {
           />
           <p
             className={`${
-              dropdownState[index] && item.dropdown ? "Border-Color" : ""
+              isActiveDropdown(index) ? "Border-Color" : "sidebar-link-title"
             }`}
           >
             {item.text}
@@ -176,7 +176,7 @@ const SideBar = () => {
 
   return (
     <aside>
-      <ul className="home-sidebar">{sidebarElements}</ul>
+      <ul className="home-sidebar df">{sidebarElements}</ul>
     </aside>
   );
 };
